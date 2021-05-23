@@ -1,0 +1,59 @@
+@import (reference) '../../less/variables.less';
+
+.section__title {
+  font-family: "Montserrat", "Arial";
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 24px;
+  text-transform: uppercase;
+  
+  &--main {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  span {
+    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.section__sub-title {
+  font-family: "Montserrat", "Arial";
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+@media (min-width: @desktop) {
+  .section {
+    width: 1920px;
+    margin: 0 auto;
+  }
+
+  .section__title {
+    font-family: "Montserrat", "Arial";
+
+    font-weight: 900;
+    font-style: italic;
+    line-height: 24px;
+    text-transform: uppercase;
+    
+    &--main {
+      font-size: 80px;
+      line-height: 84px;
+    }
+
+    span {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+}

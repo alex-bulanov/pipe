@@ -1,12 +1,291 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hello World</title>
+  <meta name="description" content="промо-сайт компании «Магистраль58»">
+  <link rel="preload" href="fonts/Montserrat-BlackItalic.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Montserrat-BlackItalic.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/Montserrat-Bold.woff" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/PTSans-Bold.woff" as="font" crossorigin="anonymous">
+  <title>Магистраль58</title>
 </head>
+
 <body>
+  <div class="wrapper">
+    <!-- HEADER -->
+    <header class="header">
+      <!-- <div class="container"> -->
+      <div class="header__bar">
+
+        <a class="header__logo" href="#!">
+          <picture>
+            <!-- desktop -->
+            <source media="(min-width: 1920px)"
+              srcset="${require('./common.blocks/header/header-logo-desktop.png')}, ${require('./common.blocks/header/header-logo-desktop@2x.png')} 2x">
+            <!-- mobile -->
+            <img class="header__logo-img" src="common.blocks/header/header-logo.png"
+              srcset="${require('./common.blocks/header/header-logo@2x.png')} 2x" width="69" height="50"
+              alt="Логотип компании «Магистраль58»">
+          </picture>
+        </a>
+
+        <div class="header__menu menu">
+
+          <button class="menu__toggle button-reset" type="button">
+            <span class="menu__toggle-icon"></span>
+          </button>
+
+          <div class="menu__body">
+            <nav class="menu__nav">
+              <ul class="menu__nav-list list-reset">
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link menu__nav-link--active" href="#bonus" data-goto=".bonus">Выгода</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="#advantage" data-goto=".advantages">Преимущества</a>
+                </li>
+                <li class="menu__nav-item">
+                  <a class="menu__nav-link" href="#feedback" data-goto=".feedback">Связаться с нами</a>
+                </li>
+              </ul>
+            </nav>
+
+            <div class="menu__contacts">
+              <a class="menu__link" href="tel:+79631096610">
+                <svg class="menu__link-icon" width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-phone"></use>
+                </svg>
+                <span>8 (963) 109-66-10</span>
+              </a>
+              <a class="menu__link" href="mailto:info@magistral58.ru">
+                <svg class="menu__link-icon" width="24" height="24" viewBox="0 0 24 24">
+                  <use xlink:href="#icon-mail"></use>
+                </svg>
+                <span>info@magistral58.ru</span>
+              </a>
+            </div>
+
+            <a class="menu__button button" href="https://magistral58.ru/" target="_blank">
+              <div>
+                <span>На главный сайт</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+        <!-- </div> -->
+      </div>
+    </header>
+    <!-- END HEADER -->
+    <!-- MAIN -->
+    <main class="">
+      <!-- HERO -->
+      <section class="hero section">
+        <div class="container">
+          <h1 class="hero__title section__title section__title--main">
+            Выбирайте трубы Pragma и получайте <span>приятные</span> <span>бонусы</span>
+          </h1>
+          <p class="hero__lead">Мы приглашаем проектировщиков к выгодному сотрудничеству с нашей фирмой.</p>
+
+          <a class="hero__button button" href="#feedback">
+            <div>
+              <span>Сотрудничать</span>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- END HERO -->
+
+      <!-- BONUS -->
+      <section class="bonus section" data-section="bonus">
+        <div class="container">
+          <h2 class="bonus__title section__title">Что получает <span>специалист ВК?</span></h2>
+          <p class="bonus__desc">За семилетнюю историю партнерства с проектными организациями
+            ни один проектировщик не отказался
+            от совместной деятельности с нашей компанией.</p>
+
+          <div class="bonus__slider">
+            <h3 class="bonus__sub-title section__sub-title">Общая стоимость заказа</h3>
+
+            <div class="bonus__slider" id="bonus-range"></div>
+
+          </div>
+        </div>
+
+      </section>
+      <!-- END BONUS  -->
+      <!-- AMOUNT -->
+      <section class="amount section">
+        <div class="container">
+          <h2 class="amount__title section__title">Средняя сумма бонуса специалиста вк</h2>
+
+          <strong class="amount__value">100 000 ₽</strong>
+          <a class="amount__button button button--outline" href="#feedback">
+            <div>
+              <span>Хочу сотрудничать</span>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- END AMOUNT -->
+      <!-- PRAGMA -->
+      <section class="pragma section">
+        <div class="container">
+          <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
+            лучшее решение для <br> проектирования вашей задумки</h2>
+
+          <p class="pragma__desc">Наша труба используется в самых крупных и значимых объектах России. Это стадионы,
+            построенные к чемпионату мира по
+            футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных комплексов
+            спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
+
+          <div class="pragma__image-container">
+            <div class="pragma__text"></div>
+
+          </div>
+        </div>
+      </section>
+      <!-- END PRAGMA -->
+      <!-- ADVANTAGES  -->
+      <section class="advantages section" data-section="advantages">
+        <div class="container">
+          <h2 class="advantages__title section__title">Преимущества трубы</h2>
+
+          <ul class="advantages__list list-reset">
+            <li class="advantages__advantage advantage">
+              <div class="advantage__img">
+                <div class="advantage__circle">
+                  <div class="advantage__circle-bg">
+                    <div class="advantage__circle">
+                      <div class="advantage__circle-bg">
+                        <div class="advantage__icon-wrap">
+                          <svg class="" width="90" height="90" viewBox="0 0 90 90">
+                            <use xlink:href="#icon-water"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="advantage__title section__sub-title">Максимальная герметичность благодаря технологии раструба
+              </h3>
+            </li>
+            <li class="advantages__advantage advantage">
+              <div class="advantage__img">
+                <div class="advantage__circle">
+                  <div class="advantage__circle-bg">
+                    <div class="advantage__circle">
+                      <div class="advantage__circle-bg">
+                        <div class="advantage__icon-wrap">
+                          <svg class="" width="90" height="90" viewBox="0 0 90 90">
+                            <use xlink:href="#icon-goal"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="advantage__title section__sub-title">PipeLife - один из мировых лидеров в производстве
+                полипропиленовых труб</h3>
+            </li>
+            <li class="advantages__advantage advantage">
+              <div class="advantage__img">
+                <div class="advantage__circle">
+                  <div class="advantage__circle-bg">
+                    <div class="advantage__circle">
+                      <div class="advantage__circle-bg">
+                        <div class="advantage__icon-wrap">
+                          <svg class="" width="100" height="100" viewBox="0 0 100 100">
+                            <use xlink:href="#icon-conversation"></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h3 class="advantage__title section__sub-title">Мы - официальный дилер производителя на территории России
+              </h3>
+            </li>
+
+          </ul>
+
+          <p class="advantages__lead">Подробнее познакомиться с другими преимуществами системы можно в
+            техническом каталоге, который мы с удовольствием вышлем по запросу электронной почтой.</p>
+
+
+
+          <a class="advantages__button button button--gradient" href="#feedback">
+            <div><span>Запросить каталог</span></div>
+          </a>
+        </div>
+      </section>
+      <!-- END ADVANTAGES  -->
+      <!-- FEEDBACK -->
+      <section class="feedback section" data-section="feedback">
+        <div class="container">
+          <h2 class="feedback__title section__title">Сотрудничать с&nbsp;нами</h2>
+
+          <p class="feedback__desc">Мы знаем, что сотрудничество с нашей компанией вызывает только положительные эмоции
+            у наших партнеров!</p>
+
+          <form class="feedback__form form" action="#" method="POST" id="feedback-form">
+            <div class="form__input-container">
+              <input class="form__input " type="text" name="name" id="name" required>
+              <div class="form__input-wrapper"></div>
+              <label class="form__label" for="name">Ваше имя</label>
+            </div>
+
+            <div class="form__input-container">
+              <input class="form__input" type="tel" name="phone" id="phone" placeholder="999-999-9999" required>
+              <div class="form__input-wrapper"></div>
+              <label class="form__label" for="phone">Ваш номер телефона</label>
+            </div>
+
+            <div class="form__input-container">
+              <input class="form__input" type="email" name="mail" id="mail" required>
+              <div class="form__input-wrapper"></div>
+              <label class="form__label" for="mail">Ваш e-mail</label>
+            </div>
+
+            <div class="form__input-container">
+              <input class="form__input" type="text" name="city" id="city" required>
+              <div class="form__input-wrapper"></div>
+              <label class="form__label" for="city">Ваш город</label>
+            </div>
+
+            <div class="form__input-container form__input-container--message">
+              <textarea class="form__input form__input--textarea" name="message" id="message"></textarea>
+              <div class="form__input-wrapper"></div>
+              <label class="form__label" for="message">Ваш комментарий</label>
+            </div>
+
+            <p class="form__desc">Нажимая кнопку, вы даете согласие на обработку персональных данных</p>
+
+            <button class="form__submit button" type="submit">
+              <div>
+                <span>
+                  Отправить
+                </span>
+              </div>
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- END FEEDBACK -->
+
+    </main>
+    <!-- END MAIN -->
+
+  </div>
 
 </body>
+
 </html>

@@ -1,10 +1,10 @@
 {
-  "name": "site ...",
+  "name": "pipe",
   "version": "1.0.0",
-  "description": "Верстка сайта ...",
+  "description": "Верстка сайта",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/SDim87/bundle-webpack3-less-vuejs"
+    "type": "",
+    "url": ""
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --host 0.0.0.0 --watch",
@@ -23,9 +23,12 @@
     ]
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "babel-polyfill": "^6.26.0",
     "normalize.css": "^8.0.0",
+    "nouislider": "^15.1.1",
     "vue": "^2.5.16",
-    "babel-polyfill": "^6.26.0"
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",

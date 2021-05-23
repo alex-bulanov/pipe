@@ -15,7 +15,8 @@
 // require("expose-loader?WOW!wow.js");
 
 // animate.css
-// require("animate.css/animate.css");
+require("animate.css/animate.css");
+
 
 // blueimp gallery https://github.com/blueimp/Gallery
 // require("blueimp-gallery/css/blueimp-gallery.min.css");

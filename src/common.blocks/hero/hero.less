@@ -1,0 +1,55 @@
+@import (reference) '../../less/variables.less';
+
+.hero {
+  // position: relative;
+  min-height: 569px;
+  padding-top: 104px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  outline: 1px solid yellow;
+
+  &__title {
+    margin: 0 0 14px;
+  } 
+  
+  &__lead {
+    margin: 0 0 14px;
+
+    &:last-of-type {
+      margin-bottom: 34px;
+    }
+  }
+
+  .hero__button {
+    width: 224px;
+  }
+}
+
+@media (min-width: @desktop) {
+  .hero {
+  min-height: 1080px;
+  padding-top: 325px;
+
+  background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg-desktop.jpg');
+
+  &__title {
+    margin: 0 0 41px;
+  } 
+  
+  &__lead {
+    margin: 0 0 24px;
+    font-size: 20px;
+    line-height: 26px;
+
+    &:last-of-type {
+      margin-bottom: 64px;
+    }
+  }
+
+  .hero__button {
+    width: 224px;
+  }
+}
+}
