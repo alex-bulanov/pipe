@@ -1,0 +1,140 @@
+@import (reference) '../../less/variables.less';
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  appearance: none;
+  font-family: "PTSans", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: @main-dark;
+  background-image: linear-gradient(to right, @main-peachy 0%, @main-yellow 51%,  @main-peachy 100%);
+  background-size: 200% auto;
+  transition: @transition;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+
+  div {
+    padding: 15px 32px 13px;
+  }
+
+  &:hover {
+    background-position: right center;
+  }
+
+  &:focus {
+    background-position: left center;
+    border-color: @text-color;
+  }
+
+  &:active {
+    background-position: left center;
+    border-color: transparent;
+  }
+}
+
+
+.button--outline {
+  border-color: @main-dark;
+  background: transparent;
+
+  &:hover {
+    border-color: @main-dark;
+    background: @main-dark;
+
+    span {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:focus {
+    background: transparent;
+    border-color: @text-color;
+
+    span {
+      background: @main-dark;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:active {
+    border-color: @main-dark;
+    background: @main-dark;
+  
+    span {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.button--gradient {
+  div {
+    background: @main-dark;
+  }
+
+  span {
+    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover {
+    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+    
+    div {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+    }
+
+    span {
+      background: @main-dark;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &:focus {
+
+    div {
+      background: @main-dark;
+    }
+
+    span {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  
+  &:active {
+    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+
+    div {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+    }
+
+    span {
+      background: @main-dark;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

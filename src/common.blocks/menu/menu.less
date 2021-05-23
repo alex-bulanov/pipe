@@ -1,0 +1,217 @@
+@import (reference) '../../less/variables.less';
+
+.menu {
+  &__body {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    padding: 64px 16px;
+    width: 100%;
+    height: 100%;
+    background: @main-dark;
+    transition: @transition;
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background-color: @main-dark;
+      z-index: 10;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 10px 9px;
+    color: @text-color;
+    z-index: 10;
+
+    &-icon {
+      width: 100%;
+      height: 2px;
+      background-color: @text-color;
+      transition: all 0.3s ease 0s;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      width: calc(100% - 18px);
+      height: 2px;
+      background-color: @text-color;
+    }
+
+    &::before {
+      top: 10px;
+      transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    }
+
+    &::after {
+      bottom: 10px;
+      transition: transform 0.2s ease-in, bottom 0.2s linear 0.2s;
+    }
+  }
+
+  &__toggle--active {
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+    }
+
+    &::after {
+      bottom: calc(50% - 2px);
+      transform: rotate(-45deg);
+      transition: bottom 0.2s linear, transform 0.2s ease-in 0.2s;
+    }
+
+  }
+
+  &__toggle--active &__toggle-icon  {
+    transform: scale(0) translate(0, -50%);
+  }
+
+  &__nav-list {
+    margin-bottom: 97px;
+    padding: 38px 0;
+  }
+
+  &__nav-item {
+    margin-bottom: 24px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 34px;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    margin-bottom: 33px;
+    padding-left: 32px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    font-style: normal;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    fill: @main-peachy;
+  }
+
+  &__button {
+    width: 224px;
+  }
+
+  &--active &__body {
+    top: 0;
+  }
+}
+
+@media (min-width: @desktop) {
+  .menu {
+    flex-grow: 1;
+
+    &__body {
+      position: static;
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+
+    &__nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      margin-right: 127px;
+
+      padding: 0;
+    }
+
+    &__nav-item {
+      margin-bottom: 0;
+      margin-right: 24px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+    }
+
+    &__nav-link {
+      transition: @transition;
+
+      &:hover,
+      &:focus {
+        background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    &__nav-link--active {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;   
+    }
+
+    &__contacts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0;
+      margin-right: 32px;
+    }
+
+    &__link {
+      position: relative;
+      display: block;
+      margin-bottom: 0;
+      margin-right: 32px;
+      padding-left: 32px;
+      font-family: "Montserrat", "Arial", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 700;
+      font-style: normal;
+
+      &:last-of-type {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

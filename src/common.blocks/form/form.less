@@ -1,0 +1,142 @@
+@import (reference) '../../less/variables.less';
+  
+.form {
+  padding: 24px 16px;
+  color: @text-color;
+  background: @main-dark;
+
+  &__input-container {
+    position: relative;
+    display: flex;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 1px;
+    background: @text-color;
+    overflow: hidden;
+
+    &:last-of-type {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__input-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: @text-color;
+    z-index: 1;
+  }
+
+  &__input {
+    appearance: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    width: 100%;
+    height: 54px;
+    padding: 26px 24px 5px;
+    font-family: "PTSans", "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: @text-color;
+    background-color: @main-dark !important;
+    z-index: 2;
+
+    &:focus {
+      height: 52px;
+      outline: none;
+    }
+
+    &--textarea {
+      height: 170px;
+      padding: 34px 24px 10px;
+      resize: none;
+      overflow: auto;
+
+      &:focus {
+        height: 168px;
+        outline: none;
+      }
+    }
+  }
+
+  &__input:-webkit-autofill,
+  &__input:-webkit-autofill:hover,
+  &__input:-webkit-autofill:focus,
+  &__input:-webkit-autofill:active {
+    transition: background-color 5500s ease-in-out 0s;
+    -webkit-text-fill-color: @text-color !important;
+  }
+
+  &__label {
+    position: absolute;
+    top: 16px;
+    left: 24px;
+    font-size: 16px;
+    line-height: 24px;
+    color: @secondary-text-color;
+    z-index: 2;
+    transition: @transition;
+  }
+
+  &__input:hover + &__input-wrapper {
+    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+  }
+
+  &__input:focus + &__input-wrapper {
+    background: @text-color;
+  }
+
+  &__input[name="message"] ~ &__label {
+    top: 20px;
+    left: 24px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__input[name="phone"] ~ &__label,
+  &__input:focus ~ &__label {
+    top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    color: @text-color;
+  }
+
+  &__input::-webkit-input-placeholder {
+    color: @text-color;
+  }
+
+  &__input::-moz-placeholder {
+    color: @text-color;
+  }
+
+  &__input:-moz-placeholder {
+    color: @text-color;
+  }
+
+  &__input:-ms-input-placeholder {
+    color: @text-color;
+  }
+
+  &__input-container:focus-within {
+    padding: 2px;
+  }
+
+  &__desc {
+    margin-bottom: 23px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  &__submit {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 288px;
+  }
+}

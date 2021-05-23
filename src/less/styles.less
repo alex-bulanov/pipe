@@ -1,9 +1,48 @@
 @import (reference) './variables.less';
 
-html {
-  color: @color-text;
+@font-face {
+  font-family: "PTSans";
+  src: url("../assets/fonts/PTSans-Bold.woff2") format("woff2"), url("../assets/fonts/PTSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
-  font: 16px Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-BlackItalic.woff2") format("woff2"), url("../assets/fonts/Montserrat-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.woff2") format("woff2"), url("../assets/fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "PTSans", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  font-style: normal;
+  color: @text-color; 
+  background: @main-dark;
 }
 
 h1,
@@ -26,3 +65,51 @@ a {
 
   color: inherit;
 }
+
+.lock {
+  overflow: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list-reset {
+  padding: 0;
+  list-style: none;
+}
+
+.button-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  position: relative;
+  // max-width: 320px;
+  margin: 0 auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: @desktop) {
+  .container {
+    padding: 0;
+    max-width: 1320px;
+  }
+} 

@@ -1,0 +1,53 @@
+@import (reference) '../../less/variables.less';
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: @main-dark;
+  z-index: 100;
+
+  &__bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 16px;
+    background-color: @main-dark;
+  }
+
+  &__logo {
+    position: relative;
+    width: 69px;
+    height: 50px;
+    z-index: 10;
+  }
+
+  &__logo-img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: @desktop) {
+  .header {
+    opacity: 0.8;
+    transition: @transition;
+
+    &__bar {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 16px 0;
+    }
+
+    &__logo {
+      width: 78px;
+      height: 56px;
+      margin-right: 129px;
+    }
+
+    &--scrolled {
+      opacity: 1;
+    }
+  }
+}
