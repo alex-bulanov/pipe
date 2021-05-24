@@ -2,8 +2,8 @@
 
 .advantage {
   width: 288px;
-  margin: 0 auto;
-  
+  min-height: 308px;
+
   &__img {
     margin: 0 auto 14px;
     width: 220px;
@@ -39,3 +39,21 @@
     text-align: center;
   }
 }
+
+@media (min-width: @desktop) {
+  .advantage {
+    width: 424px;
+
+    &__img {
+      margin-bottom: 30px;
+      width: 220px;
+      height: 220px;
+    }
+
+    &__icon {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+

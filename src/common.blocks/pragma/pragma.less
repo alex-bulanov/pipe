@@ -37,3 +37,42 @@
     background: no-repeat url("./pragma-bg.png") center / cover;
   }
 }
+
+
+@media (min-width: @desktop) {
+  .pragma {
+    padding-top: 192px;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;  
+    }
+
+    &__text-content {
+      width: 760px;
+      margin-right: 36px;
+      padding-top: 5px;
+      padding-left: 6px;
+    }
+
+    &__title {
+      margin: 0 0 29px;
+    }
+
+    &__desc {
+      margin: 0;
+      font-size: 20px;
+      line-height: 26px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+
+    &__image-container {
+      flex-grow: 1;
+      height: 370px;
+      margin: 0;
+    }
+  }
+}
