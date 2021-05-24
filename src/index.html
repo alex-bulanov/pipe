@@ -44,7 +44,7 @@
             <nav class="menu__nav">
               <ul class="menu__nav-list list-reset">
                 <li class="menu__nav-item">
-                  <a class="menu__nav-link menu__nav-link--active" href="#bonus" data-goto=".bonus">Выгода</a>
+                  <a class="menu__nav-link" href="#bonus" data-goto=".bonus">Выгода</a>
                 </li>
                 <li class="menu__nav-item">
                   <a class="menu__nav-link" href="#advantage" data-goto=".advantages">Преимущества</a>
@@ -83,7 +83,7 @@
     </header>
     <!-- END HEADER -->
     <!-- MAIN -->
-    <main class="">
+    <main>
       <!-- HERO -->
       <section class="hero section">
         <div class="container">
@@ -104,7 +104,7 @@
       <!-- BONUS -->
       <section class="bonus section" data-section="bonus">
         <div class="container">
-          <h2 class="bonus__title section__title">Что получает <span>специалист ВК?</span></h2>
+          <h2 class="bonus__title section__title">Что получает <br><span>специалист ВК?</span></h2>
           <p class="bonus__desc">За семилетнюю историю партнерства с проектными организациями
             ни один проектировщик не отказался
             от совместной деятельности с нашей компанией.</p>
@@ -136,17 +136,20 @@
       <!-- PRAGMA -->
       <section class="pragma section">
         <div class="container">
-          <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
-            лучшее решение для <br> проектирования вашей задумки</h2>
+          <div class="pragma__wrapper">
+            <div class="pragma__text-content">
+              <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
+                лучшее решение для <br> проектирования вашей задумки</h2>
 
-          <p class="pragma__desc">Наша труба используется в самых крупных и значимых объектах России. Это стадионы,
-            построенные к чемпионату мира по
-            футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных комплексов
-            спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
-
-          <div class="pragma__image-container">
-            <div class="pragma__text"></div>
-
+              <p class="pragma__desc">Наша труба используется в самых крупных и значимых объектах России. Это стадионы,
+                построенные к чемпионату мира по
+                футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных
+                комплексов
+                спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
+            </div>
+            <div class="pragma__image-container">
+              <div class="pragma__text"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -164,7 +167,7 @@
                     <div class="advantage__circle">
                       <div class="advantage__circle-bg">
                         <div class="advantage__icon-wrap">
-                          <svg class="" width="90" height="90" viewBox="0 0 90 90">
+                          <svg class="advantage__icon" width="90" height="90" viewBox="0 0 90 90">
                             <use xlink:href="#icon-water"></use>
                           </svg>
                         </div>
@@ -183,7 +186,7 @@
                     <div class="advantage__circle">
                       <div class="advantage__circle-bg">
                         <div class="advantage__icon-wrap">
-                          <svg class="" width="90" height="90" viewBox="0 0 90 90">
+                          <svg class="advantage__icon" width="90" height="90" viewBox="0 0 90 90">
                             <use xlink:href="#icon-goal"></use>
                           </svg>
                         </div>
@@ -202,7 +205,7 @@
                     <div class="advantage__circle">
                       <div class="advantage__circle-bg">
                         <div class="advantage__icon-wrap">
-                          <svg class="" width="100" height="100" viewBox="0 0 100 100">
+                          <svg class="advantage__icon" width="100" height="100" viewBox="0 0 100 100">
                             <use xlink:href="#icon-conversation"></use>
                           </svg>
                         </div>
@@ -214,14 +217,9 @@
               <h3 class="advantage__title section__sub-title">Мы - официальный дилер производителя на территории России
               </h3>
             </li>
-
           </ul>
-
           <p class="advantages__lead">Подробнее познакомиться с другими преимуществами системы можно в
             техническом каталоге, который мы с удовольствием вышлем по запросу электронной почтой.</p>
-
-
-
           <a class="advantages__button button button--gradient" href="#feedback">
             <div><span>Запросить каталог</span></div>
           </a>
@@ -237,34 +235,38 @@
             у наших партнеров!</p>
 
           <form class="feedback__form form" action="#" method="POST" id="feedback-form">
-            <div class="form__input-container">
-              <input class="form__input " type="text" name="name" id="name" required>
-              <div class="form__input-wrapper"></div>
-              <label class="form__label" for="name">Ваше имя</label>
-            </div>
+            <div class="form__wrapper">
+              <div class="form__wrapper-left">
+                <div class="form__input-container">
+                  <input class="form__input " type="text" name="name" id="name" required>
+                  <div class="form__input-wrapper"></div>
+                  <label class="form__label" for="name">Ваше имя</label>
+                </div>
 
-            <div class="form__input-container">
-              <input class="form__input" type="tel" name="phone" id="phone" placeholder="999-999-9999" required>
-              <div class="form__input-wrapper"></div>
-              <label class="form__label" for="phone">Ваш номер телефона</label>
-            </div>
+                <div class="form__input-container">
+                  <input class="form__input" type="tel" name="phone" id="phone" placeholder="999-999-9999" required>
+                  <div class="form__input-wrapper"></div>
+                  <label class="form__label" for="phone">Ваш номер телефона</label>
+                </div>
 
-            <div class="form__input-container">
-              <input class="form__input" type="email" name="mail" id="mail" required>
-              <div class="form__input-wrapper"></div>
-              <label class="form__label" for="mail">Ваш e-mail</label>
-            </div>
+                <div class="form__input-container">
+                  <input class="form__input" type="email" name="mail" id="mail" required>
+                  <div class="form__input-wrapper"></div>
+                  <label class="form__label" for="mail">Ваш e-mail</label>
+                </div>
 
-            <div class="form__input-container">
-              <input class="form__input" type="text" name="city" id="city" required>
-              <div class="form__input-wrapper"></div>
-              <label class="form__label" for="city">Ваш город</label>
-            </div>
+                <div class="form__input-container">
+                  <input class="form__input" type="text" name="city" id="city" required>
+                  <div class="form__input-wrapper"></div>
+                  <label class="form__label" for="city">Ваш город</label>
+                </div>
+              </div>
 
-            <div class="form__input-container form__input-container--message">
-              <textarea class="form__input form__input--textarea" name="message" id="message"></textarea>
-              <div class="form__input-wrapper"></div>
-              <label class="form__label" for="message">Ваш комментарий</label>
+              <div class="form__input-container form__input-container--message">
+                <textarea class="form__input form__input--textarea" name="message" id="message"></textarea>
+                <div class="form__input-wrapper"></div>
+                <label class="form__label" for="message">Ваш комментарий</label>
+              </div>
             </div>
 
             <p class="form__desc">Нажимая кнопку, вы даете согласие на обработку персональных данных</p>

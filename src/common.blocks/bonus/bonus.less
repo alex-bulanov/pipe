@@ -1,9 +1,8 @@
+@import (reference) '../../less/variables.less';
+
 .bonus {
   padding-top: 68px;
-
   min-height: 815px;
-
-  outline: 1px solid blue;
 
   &__title {
     margin-bottom: 10px;
@@ -19,5 +18,32 @@
 
   &__slider {
     height: 266px;
+  }
+}
+
+
+@media (min-width: @desktop) {
+  .bonus {
+    min-height: 791px;
+    padding-top: 120px;
+
+    &__title {
+      margin-bottom: 29px;
+    }
+
+    &__desc {
+      width: 760px;
+      margin: 0 0 26px;
+      font-size: 20px;
+      line-height: 26px;
+
+      &:last-of-type {
+        margin-bottom: 39px;
+      }
+    }
+
+    &__slider {
+      height: 266px;
+    }
   }
 }
