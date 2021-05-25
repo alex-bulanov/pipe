@@ -96,15 +96,24 @@ a {
   cursor: pointer;
 }
 
+
 .wrapper {
   position: relative;
-  // max-width: 320px;
+  max-width: 1920px;
   margin: 0 auto;
+
+  outline: 1px solid gold;
 }
 
 .container {
   margin: 0 auto;
   padding: 0 16px;
+}
+
+@media (min-width: @tablet) {
+ .container {
+    padding: 0 34px;
+  } 
 }
 
 @media (min-width: @desktop) {

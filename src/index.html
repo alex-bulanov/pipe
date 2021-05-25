@@ -12,6 +12,9 @@
   <link rel="preload" href="fonts/Montserrat-Bold.woff" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/PTSans-Bold.woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="fonts/PTSans-Bold.woff" as="font" crossorigin="anonymous">
+
+  <!-- <link rel="icon" href="" type="image/x-icon"> -->
+
   <title>Магистраль58</title>
 </head>
 
@@ -22,16 +25,10 @@
       <!-- <div class="container"> -->
       <div class="header__bar">
 
-        <a class="header__logo" href="#!">
-          <picture>
-            <!-- desktop -->
-            <source media="(min-width: 1920px)"
-              srcset="${require('./common.blocks/header/header-logo-desktop.png')}, ${require('./common.blocks/header/header-logo-desktop@2x.png')} 2x">
-            <!-- mobile -->
-            <img class="header__logo-img" src="common.blocks/header/header-logo.png"
-              srcset="${require('./common.blocks/header/header-logo@2x.png')} 2x" width="69" height="50"
-              alt="Логотип компании «Магистраль58»">
-          </picture>
+        <a class="header__logo" href="https://magistral58.ru/" target="_blank">
+          <svg class="header__logo-icon" width="69" height="50" viewBox="0 0 69 50">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
         </a>
 
         <div class="header__menu menu">
@@ -44,25 +41,28 @@
             <nav class="menu__nav">
               <ul class="menu__nav-list list-reset">
                 <li class="menu__nav-item">
-                  <a class="menu__nav-link" href="#bonus" data-goto=".bonus">Выгода</a>
+                  <a class="menu__nav-link" href="#bonus" data-goto=".bonus" data-alt="Выгода">Выгода</a>
                 </li>
                 <li class="menu__nav-item">
-                  <a class="menu__nav-link" href="#advantage" data-goto=".advantages">Преимущества</a>
+                  <a class="menu__nav-link" href="#advantages" data-goto=".advantages"
+                    data-alt="Преимущества">Преимущества</a>
                 </li>
                 <li class="menu__nav-item">
-                  <a class="menu__nav-link" href="#feedback" data-goto=".feedback">Связаться с нами</a>
+                  <a class="menu__nav-link" href="#feedback" data-goto=".feedback" data-alt="Связаться с нами">Связаться
+                    с
+                    нами</a>
                 </li>
               </ul>
             </nav>
 
             <div class="menu__contacts">
-              <a class="menu__link" href="tel:+79631096610">
+              <a class="menu__link" href="tel:+79631096610" data-alt="8 (963) 109-66-10">
                 <svg class="menu__link-icon" width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#icon-phone"></use>
                 </svg>
                 <span>8 (963) 109-66-10</span>
               </a>
-              <a class="menu__link" href="mailto:info@magistral58.ru">
+              <a class="menu__link" href="mailto:info@magistral58.ru" data-alt="info@magistral58.ru">
                 <svg class="menu__link-icon" width="24" height="24" viewBox="0 0 24 24">
                   <use xlink:href="#icon-mail"></use>
                 </svg>
@@ -70,11 +70,8 @@
               </a>
             </div>
 
-            <a class="menu__button button" href="https://magistral58.ru/" target="_blank">
-              <div>
-                <span>На главный сайт</span>
-              </div>
-            </a>
+            <a class="menu__button button" href="https://magistral58.ru/" target="_blank"><span>На главный
+                сайт</span></a>
           </div>
 
         </div>
@@ -82,57 +79,89 @@
       </div>
     </header>
     <!-- END HEADER -->
+
     <!-- MAIN -->
     <main>
       <!-- HERO -->
-      <section class="hero section">
+      <section class="hero section animate">
         <div class="container">
-          <h1 class="hero__title section__title section__title--main">
+          <h1
+            class="hero__title section__title section__title--main animate__animated animate__slideInLeft animate__faster">
             Выбирайте трубы Pragma и получайте <span>приятные</span> <span>бонусы</span>
           </h1>
-          <p class="hero__lead">Мы приглашаем проектировщиков к выгодному сотрудничеству с нашей фирмой.</p>
+          <p class="hero__lead section__text animate__animated animate__fadeIn wow" data-wow-delay="0.5s">Мы приглашаем
+            проектировщиков к
+            выгодному сотрудничеству с нашей фирмой.
+          </p>
 
-          <a class="hero__button button" href="#feedback">
-            <div>
-              <span>Сотрудничать</span>
-            </div>
-          </a>
+          <a class="hero__button button animate__animated animate__fadeIn wow" href="#feedback" data-wow-delay="0.5s"
+            data-goto=".feedback"><span>Сотрудничать</span></a>
         </div>
       </section>
       <!-- END HERO -->
 
       <!-- BONUS -->
-      <section class="bonus section" data-section="bonus">
+      <section class="bonus section" data-section="bonus" id="bonus">
         <div class="container">
           <h2 class="bonus__title section__title">Что получает <br><span>специалист ВК?</span></h2>
-          <p class="bonus__desc">За семилетнюю историю партнерства с проектными организациями
-            ни один проектировщик не отказался
+          <p class="bonus__desc section__text">За семилетнюю историю партнерства с проектными организациями ни один
+            проектировщик не отказался
             от совместной деятельности с нашей компанией.</p>
 
-          <div class="bonus__slider">
-            <h3 class="bonus__sub-title section__sub-title">Общая стоимость заказа</h3>
+          <h3 class="bonus__sub-title section__sub-title">Общая стоимость заказа</h3>
 
+          <div class="bonus__slider-wrapper">
             <div class="bonus__slider" id="bonus-range"></div>
+          </div>
 
+          <div class="bonus__value-wrapper">
+            <h3 class="bonus__sub-title section__sub-title">Бонус партнёрства</h3>
+            <p class="bonus__value"><span>40 000</span> ₽</p>
           </div>
         </div>
-
       </section>
       <!-- END BONUS  -->
+
       <!-- AMOUNT -->
       <section class="amount section">
-        <div class="container">
-          <h2 class="amount__title section__title">Средняя сумма бонуса специалиста вк</h2>
+        <div class="amount__scene" id="scene">
+          <div class="amount__wave amount__wave-01" data-depth="-0.2">
+            <svg width="1064" height="272" viewBox="0 0 1064 272">
+              <use xlink:href="#icon-wave01"></use>
+            </svg>
+          </div>
 
-          <strong class="amount__value">100 000 ₽</strong>
-          <a class="amount__button button button--outline" href="#feedback">
-            <div>
-              <span>Хочу сотрудничать</span>
-            </div>
-          </a>
+          <div class="amount__wave amount__wave-02" data-depth="0.08">
+            <svg width="1142" height="383" viewBox="0 0 1142 383">
+              <use xlink:href="#icon-wave02"></use>
+            </svg>
+          </div>
+
+          <div class="amount__wave amount__wave-03" data-depth="-0.09">
+            <svg width="369" height="634" viewBox="0 0 369 634">
+              <use xlink:href="#icon-wave03"></use>
+            </svg>
+          </div>
+
+          <div class="amount__wave amount__wave-04" data-depth="0.29">
+            <svg width="687" height="528" viewBox="0 0 687 528">
+              <use xlink:href="#icon-wave04"></use>
+            </svg>
+          </div>
+
+        </div>
+
+        <div class="container">
+          <h2 class="amount__title section__title">Средняя сумма бонуса <br> специалиста вк</h2>
+
+          <strong class="amount__value"><span id="value">100 000</span> ₽</strong>
+          <a class="amount__button button button--outline" href="#feedback" data-goto=".feedback"><span>Хочу
+              сотрудничать</span></a>
+
         </div>
       </section>
       <!-- END AMOUNT -->
+
       <!-- PRAGMA -->
       <section class="pragma section">
         <div class="container">
@@ -141,21 +170,35 @@
               <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
                 лучшее решение для <br> проектирования вашей задумки</h2>
 
-              <p class="pragma__desc">Наша труба используется в самых крупных и значимых объектах России. Это стадионы,
+              <p class="pragma__desc section__text">Наша труба используется в самых крупных и значимых объектах России.
+                Это стадионы,
                 построенные к чемпионату мира по
                 футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных
                 комплексов
                 спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
             </div>
-            <div class="pragma__image-container">
-              <div class="pragma__text"></div>
+            <div class="pragma__image-container animate">
+              <img class="pragma__image" src="./common.blocks/pragma/text.svg" width="288" height="208" alt="">
+              <img class="pragma__image pragma__image--animate  animate__animated animate__fadeIn wow"
+                src="./common.blocks/pragma/text-color.svg" data-wow-duration="0.7s" data-wow-delay="1s" width="288"
+                height="208" alt="">
+              <picture>
+                <source media="(min-width: 1920px)"
+                  srcset="${require('./common.blocks/pragma/tube-desktop.png')}, ${require('./common.blocks/pragma/tube-desktop@2x.png')} 2x">
+                <img class="pragma__image pragma__image--tube animate__animated animate__zoomIn wow" width="185"
+                  height="150" src="./common.blocks/pragma/tube.png"
+                  srcset="${require('./common.blocks/pragma/tube.png')} 2x" alt="Труба Прагма" data-wow-duration="0.5s"
+                  data-wow-delay="0.1s">
+              </picture>
+
             </div>
           </div>
         </div>
       </section>
       <!-- END PRAGMA -->
+
       <!-- ADVANTAGES  -->
-      <section class="advantages section" data-section="advantages">
+      <section class="advantages section" data-section="advantages" id="advantages">
         <div class="container">
           <h2 class="advantages__title section__title">Преимущества трубы</h2>
 
@@ -186,7 +229,7 @@
                     <div class="advantage__circle">
                       <div class="advantage__circle-bg">
                         <div class="advantage__icon-wrap">
-                          <svg class="advantage__icon" width="90" height="90" viewBox="0 0 90 90">
+                          <svg class="advantage__icon" width="100" height="100" viewBox="0 0 100 100">
                             <use xlink:href="#icon-goal"></use>
                           </svg>
                         </div>
@@ -218,33 +261,34 @@
               </h3>
             </li>
           </ul>
-          <p class="advantages__lead">Подробнее познакомиться с другими преимуществами системы можно в
+          <p class="advantages__lead section__text">Подробнее познакомиться с другими преимуществами системы можно в
             техническом каталоге, который мы с удовольствием вышлем по запросу электронной почтой.</p>
-          <a class="advantages__button button button--gradient" href="#feedback">
-            <div><span>Запросить каталог</span></div>
-          </a>
+          <a class="advantages__button button button--gradient" href="#feedback" data-goto=".feedback"><span>Запросить
+              каталог</span></a>
         </div>
       </section>
       <!-- END ADVANTAGES  -->
+
       <!-- FEEDBACK -->
-      <section class="feedback section" data-section="feedback">
+      <section class="feedback section" data-section="feedback" id="feedback">
         <div class="container">
           <h2 class="feedback__title section__title">Сотрудничать с&nbsp;нами</h2>
 
-          <p class="feedback__desc">Мы знаем, что сотрудничество с нашей компанией вызывает только положительные эмоции
+          <p class="feedback__desc section__text">Мы знаем, что сотрудничество с нашей компанией вызывает только
+            положительные эмоции
             у наших партнеров!</p>
 
           <form class="feedback__form form" action="#" method="POST" id="feedback-form">
             <div class="form__wrapper">
-              <div class="form__wrapper-left">
+              <div class="form__left-block">
                 <div class="form__input-container">
-                  <input class="form__input " type="text" name="name" id="name" required>
+                  <input class="form__input" type="text" name="name" id="name" required>
                   <div class="form__input-wrapper"></div>
                   <label class="form__label" for="name">Ваше имя</label>
                 </div>
 
                 <div class="form__input-container">
-                  <input class="form__input" type="tel" name="phone" id="phone" placeholder="999-999-9999" required>
+                  <input class="form__input" type="tel" name="phone" id="phone" required>
                   <div class="form__input-wrapper"></div>
                   <label class="form__label" for="phone">Ваш номер телефона</label>
                 </div>
@@ -269,15 +313,9 @@
               </div>
             </div>
 
-            <p class="form__desc">Нажимая кнопку, вы даете согласие на обработку персональных данных</p>
+            <p class="form__privacy">Нажимая кнопку, вы даете согласие на обработку персональных данных</p>
 
-            <button class="form__submit button" type="submit">
-              <div>
-                <span>
-                  Отправить
-                </span>
-              </div>
-            </button>
+            <button class="form__submit button" type="submit"><span>Отправить</span></button>
           </form>
         </div>
       </section>
@@ -285,9 +323,22 @@
 
     </main>
     <!-- END MAIN -->
-
   </div>
 
+  <div class="popup section" id="popup">
+    <div class="popup__body">
+      <div class="popup__content">
+        <div class="popup__container">
+          <button class="popup__close-btn popup__closes" type="button">
+            <span class="visually-hidden">Закрыть окно</span>
+          </button>
+          <h2 class="popup__title section__sub-title">Спасибо!</h2>
+          <p class="popup__text section__text">Мы свяжемся с вами в ближайшее время.</p>
+          <button class="popup__button button popup__closes" type="button"><span>Ок</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

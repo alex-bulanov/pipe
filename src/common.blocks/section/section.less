@@ -1,38 +1,64 @@
 @import (reference) '../../less/variables.less';
 
-.section__title {
-  font-family: "Montserrat", "Arial";
-  font-size: 24px;
-  font-weight: 900;
-  font-style: italic;
-  line-height: 24px;
-  text-transform: uppercase;
-  
-  &--main {
-    font-size: 32px;
-    line-height: 40px;
+.section {
+  &__title {
+    font-family: "Montserrat", "Arial";
+    font-size: 24px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    &--main {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    span {
+      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
-  span {
-    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &__sub-title {
+    font-family: "Montserrat", "Arial";
+    font-size: 16px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 24px;
+    text-transform: uppercase;
   }
 }
 
-.section__sub-title {
-  font-family: "Montserrat", "Arial";
-  font-size: 16px;
-  font-weight: 900;
-  font-style: italic;
-  line-height: 24px;
-  text-transform: uppercase;
+@media (min-width: @tablet) {
+  .section {
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+
+      &--main {
+        font-size: 48px;
+        line-height: 56px;
+      }
+    }
+
+    &__sub-title {
+      font-size: 18px;
+      line-height: 26px
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
 }
 
 @media (min-width: @desktop) {
   .section {
-    // width: 1920px;
+    // max-width: 1920px;
     margin: 0 auto;
   }
 

@@ -7,6 +7,7 @@
   background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg.jpg');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 
   @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
     background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg@2x.jpg');
@@ -26,6 +27,34 @@
 
   .hero__button {
     width: 224px;
+  }
+}
+
+@media (min-width: @tablet) {
+  .hero {
+    min-height: 1026px;
+    padding-top: 325px;
+    background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg-tablet.jpg');
+    
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: linear-gradient(rgba(@main-dark, 0.6), rgba(@main-dark, 0.6)), url('./hero-bg-tablet@2x.jpg');
+    }
+
+    &__title {
+      margin: 0 0 41px;
+    } 
+    
+    &__lead {
+      margin: 0 0 24px;
+
+      &:last-of-type {
+        margin-bottom: 64px;
+      }
+    }
+
+    .hero__button {
+      width: 224px;
+    }
   }
 }
 
