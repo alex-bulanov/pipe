@@ -5,6 +5,10 @@
   color: @text-color;
   background: @main-dark;
 
+  &__left-block {
+    margin-bottom: 17px;
+  }
+
   &__input-container {
     position: relative;
     display: flex;
@@ -14,8 +18,37 @@
     background: @text-color;
     overflow: hidden;
 
-    &:last-of-type {
+    &:last-of-type:not(&--message) {
+      margin-bottom: 0;
+    }
+    
+    &--message {
+      position: relative;
       margin-bottom: 24px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 14px;
+        right: 4px;
+        width: 22px;
+        height: 1px;
+        z-index: 2;
+        background-color: @secondary-text-color;
+        transform: rotate(-45deg);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+        width: 12px;
+        height: 1px;
+        z-index: 3;
+        background-color: @secondary-text-color;
+        transform: rotate(-45deg);
+      }
     }
   }
 
@@ -52,13 +85,13 @@
     }
 
     &--textarea {
-      height: 170px;
-      padding: 34px 24px 10px;
+      height: 168px;
+      padding: 34px 24px 16px;
       resize: none;
       overflow: auto;
 
       &:focus {
-        height: 168px;
+        height: 166px;
         outline: none;
       }
     }
@@ -98,12 +131,32 @@
     line-height: 24px;
   }
 
-  &__input[name="phone"] ~ &__label,
+  &__input[name="phone"] ~ &__label {
+    top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
   &__input:focus ~ &__label {
     top: 8px;
     font-size: 14px;
     line-height: 18px;
     color: @text-color;
+  }
+
+  // error 
+  
+  &__input--error + &__input-wrapper,
+  &__input--error:hover + &__input-wrapper {
+    background: @error-color;
+  }
+
+  &__input--error ~ &__label {
+    color: @error-color;
+  }
+
+  &__input--error:focus + &__input-wrapper {
+    background: @text-color;
   }
 
   &__input::-webkit-input-placeholder {
@@ -126,8 +179,8 @@
     padding: 2px;
   }
 
-  &__desc {
-    margin-bottom: 23px;
+  &__privacy {
+    margin-bottom: 24px;
     font-size: 14px;
     line-height: 18px;
     text-align: center;
@@ -141,19 +194,20 @@
   }
 }
 
-@media (min-width: @desktop) {
+@media (min-width: @tablet) {
   .form {
-    padding: 56px;
+    padding: 34px;
 
     &__wrapper {
       display: flex;
       flex-wrap: wrap;
+      gap: 16px;
       margin-bottom: 30px;
+    }
 
-      &-left {
-        width: 592px;
-        margin-right: 24px;
-      }
+    &__left-block {
+      width: 50%;
+      margin-bottom: 0;
     }
 
     &__input-container {
@@ -212,6 +266,31 @@
 
     &__desc {
       margin-bottom: 35px;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+}
+
+
+@media (min-width: @desktop) {
+  .form {
+    padding: 56px;
+
+    &__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+
+    &__left-block {
+      width: 592px;
+    }
+
+    &__privacy {
+      margin-bottom: 36px;
       font-size: 16px;
       line-height: 24px;
       text-align: left;

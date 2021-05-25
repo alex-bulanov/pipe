@@ -3,6 +3,7 @@
 .header {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background-color: @main-dark;
   z-index: 100;
@@ -23,7 +24,7 @@
     z-index: 10;
   }
 
-  &__logo-img {
+  &__logo-icon {
     width: 100%;
     height: auto;
   }
@@ -31,7 +32,6 @@
 
 @media (min-width: @desktop) {
   .header {
-    opacity: 0.8;
     transition: @transition;
 
     &__bar {
@@ -47,7 +47,11 @@
     }
 
     &--scrolled {
-      opacity: 1;
+      background-color: rgba(@main-dark, 0.8);
+    }
+
+    &--scrolled &__bar {
+      background-color: transparent;
     }
   }
 }

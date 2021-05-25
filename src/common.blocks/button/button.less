@@ -1,11 +1,13 @@
 @import (reference) '../../less/variables.less';
 
 .button {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   border: 2px solid transparent;
   border-radius: 8px;
   appearance: none;
+  padding: 15px 32px 13px;
   font-family: "PTSans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -21,8 +23,19 @@
   overflow: hidden;
   outline: none;
 
-  div {
-    padding: 15px 32px 13px;
+  span {
+    position: relative;
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
   }
 
   &:hover {
@@ -39,7 +52,6 @@
     border-color: transparent;
   }
 }
-
 
 .button--outline {
   border-color: @main-dark;
@@ -83,7 +95,8 @@
 }
 
 .button--gradient {
-  div {
+
+  &::after {
     background: @main-dark;
   }
 
@@ -95,10 +108,9 @@
   }
 
   &:hover {
-    background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
-    
-    div {
-      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
+
+    &::after {
+      background: none;
     }
 
     span {
@@ -111,7 +123,7 @@
 
   &:focus {
 
-    div {
+    &::after {
       background: @main-dark;
     }
 
@@ -125,10 +137,6 @@
   
   &:active {
     background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
-
-    div {
-      background: linear-gradient(90deg, @main-peachy 0%, @main-yellow 100%);
-    }
 
     span {
       background: @main-dark;

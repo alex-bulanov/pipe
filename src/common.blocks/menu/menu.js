@@ -1,6 +1,28 @@
 const menuToggle = document.querySelector('.menu__toggle');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu__nav-link[data-goto]');
+const sections = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      menuLinks.forEach((link) => {
+        const currentAnchor = link.getAttribute('href').replace('#', '');
+        if (currentAnchor === entry.target.id) {
+          link.classList.add('menu__nav-link--active');
+        } else {
+          link.classList.remove('menu__nav-link--active');
+        }
+      });
+    }
+  });
+}, {
+  threshold: 0.7,
+});
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
 
 function onMenuToggle() {
   this.classList.toggle('menu__toggle--active');
@@ -26,7 +48,6 @@ function onMenuLinkClick(e) {
       menuToggle.classList.remove('menu__toggle--active');
       menu.classList.remove('menu--active');
     }
-
 
     window.scrollTo({
       top: gotoBlockValue,

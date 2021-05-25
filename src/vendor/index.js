@@ -12,11 +12,12 @@
 // require("plax");
 
 // wow.js
-// require("expose-loader?WOW!wow.js");
+require("expose-loader?WOW!wow.js");
+const wow = new WOW();
+wow.init();
 
 // animate.css
 require("animate.css/animate.css");
-
 
 // blueimp gallery https://github.com/blueimp/Gallery
 // require("blueimp-gallery/css/blueimp-gallery.min.css");
