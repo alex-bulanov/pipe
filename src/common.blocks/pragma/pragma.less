@@ -26,24 +26,63 @@
     align-items: center;
   }
 
-  &__image {
+  &__text {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    clip-path: none;
 
-    &--animate {
-      top: 0;
-      left: 0;
-      clip-path: circle(100px at 50% 50%);
+    &--color {
+      opacity: 0;
     }
 
-    &--tube {
-      top: calc(50% + 7px);
-      left: calc(50% + 7px);
-      transform: translate(-50%, -50%);
+    svg {
+      width: 288px;
+      height: 208px;
+    }
+   
+    &--painted {
+      opacity: 1;
+      animation: paint 2s ease forwards;
     }
   }
 
+  &__text--overlay {
+    z-index: 10;
+    overflow: hidden;
+    clip-path: none;
+    opacity: 1;
+  }
+
+  &__image {
+    position: absolute;
+    display: flex;
+    top: calc(50% + 7px);
+    left: calc(50% + 7px);
+    transform: translate(-50%, -50%);
+    z-index: 40;
+  }
 }
+
+@keyframes paint {
+  0% {
+    clip-path: circle(0 at 50% 50%);
+    z-index: 20;
+  }
+
+  50% {
+    clip-path: circle(45px at 50% 50%);
+  }
+
+  100% {
+    clip-path: circle(95px at 50% 50%);
+    z-index: 20;
+  }
+}
+
 
 @media (min-width: @tablet) {
   .pragma {
@@ -64,6 +103,10 @@
       &:last-of-type {
         margin-bottom: 0;
       }
+    }
+
+    &__image-container {
+      margin: 0;
     }
   }
 }
@@ -115,24 +158,48 @@
     }
 
     &__image {
+      width: 328px;
+      height: 266px;
+      top: calc(50% - 28px);
+      left: calc(50% + 15px);
+    }
 
-      &--text {
-        width: 515px;
-        height: 371px;
-      }
+      &__text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        clip-path: none;
+        z-index: 10;
 
-      &--animate {
-        width: 515px;
-        height: 371px;
-        clip-path: circle(180px at 50% 50%);
+        svg {
+          width: 288px;
+          height: 208px;
+          width: 100%;
+          height: auto;
+        }
+      
+        &--painted {
+          animation: paint 2s ease forwards;
+        }
       }
+  }
 
-      &--tube {
-        width: 328px;
-        height: 266px;
-        top: calc(50% - 28px);
-        left: calc(50% + 15px);
-      }
+  @keyframes paint {
+    0% {
+      clip-path: circle(0 at 50% 50%);
+      z-index: 20;
+    }
+
+    50% {
+      clip-path: circle(90px at 50% 50%);
+    }
+
+    100% {
+      clip-path: circle(180px at 50% 50%);
+      z-index: 20;
     }
   }
 }
