@@ -172,7 +172,7 @@
       <!-- END AMOUNT -->
 
       <!-- PRAGMA -->
-      <section class="pragma section">
+      <section class="pragma section" id="pragma">
         <div class="container">
           <div class="pragma__wrapper">
 
@@ -186,18 +186,23 @@
               комплексов
               спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
 
-            <div class="pragma__image-container animate">
-              <img class="pragma__image pragma__image--text" src="./common.blocks/pragma/text.svg" width="288"
-                height="208" alt="">
-              <img class="pragma__image pragma__image--animate  animate__animated animate__zoomIn wow"
-                src="./common.blocks/pragma/text-color.svg" data-wow-duration="0.6s" data-wow-delay="0.7s" width="288"
-                height="208" alt="">
+            <div class="pragma__image-container">
+              <div class="pragma__text pragma__text--overlay">
+                <svg width="516" height="372" viewBox="0 0 516 372">
+                  <use xlink:href="#icon-text"></use>
+                </svg>
+              </div>
+              <div class="pragma__text pragma__text--color">
+                <svg width="516" height="372" viewBox="0 0 516 372">
+                  <use xlink:href="#icon-text-color"></use>
+                </svg>
+              </div>
+
               <picture>
                 <source media="(min-width: 1920px)"
                   srcset="${require('./common.blocks/pragma/tube-desktop.png')}, ${require('./common.blocks/pragma/tube-desktop@2x.png')} 2x">
-                <img class="pragma__image pragma__image--tube" width="185" height="150"
-                  src="./common.blocks/pragma/tube.png" srcset="${require('./common.blocks/pragma/tube.png')} 2x"
-                  alt="Труба Прагма">
+                <img class="pragma__image" width="185" height="150" src="./common.blocks/pragma/tube.png"
+                  srcset="${require('./common.blocks/pragma/tube.png')} 2x" alt="Труба Прагма">
               </picture>
             </div>
           </div>
