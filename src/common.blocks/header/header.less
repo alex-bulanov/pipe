@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   background-color: @main-dark;
-  z-index: 100;
+  z-index: 200;
 
   &__bar {
     position: relative;
@@ -32,26 +32,29 @@
 
 @media (min-width: @desktop) {
   .header {
+    width: 100%;
     transition: @transition;
+    background-color: transparent;
 
     &__bar {
-      max-width: 1320px;
+      max-width: 1384px;
+      width: auto;
       margin: 0 auto;
-      padding: 16px 0;
+      padding: 16px 34px;
+      display: flex;
+      justify-content: flex-start;
+      background-color: transparent;
     }
 
     &__logo {
       width: 78px;
       height: 56px;
-      margin-right: 129px;
+      margin-right: auto;
     }
 
     &--scrolled {
-      background-color: rgba(@main-dark, 0.8);
-    }
-
-    &--scrolled &__bar {
-      background-color: transparent;
+      transition: @transition;
+      background-color: @main-dark;
     }
   }
 }

@@ -2,7 +2,7 @@ import noUiSlider from 'nouislider';
 import 'nouislider/dist/nouislider.css';
 import wNumb from 'wnumb';
 
-const DESKTOP_WIDTH = 1920;
+const CONTROL_WIDTH = 768;
 const BONUS_VALUES = {
   500000: '25 000',
   1000000: '40 000',
@@ -21,7 +21,7 @@ function sliderInit() {
   let sliderOrientation = 'vertical';
   let sliderDirection = 'rtl';
 
-  if (window.innerWidth >= DESKTOP_WIDTH) {
+  if (window.innerWidth >= CONTROL_WIDTH) {
     sliderOrientation = 'horizontal';
     sliderDirection = 'ltr';
   }
@@ -34,6 +34,7 @@ function sliderInit() {
     start: [1000000],
     orientation: sliderOrientation,
     direction: sliderDirection,
+    keyboardSupport: true,
     connect: [true, false],
     range: {
       min: [500000, 500000],
@@ -43,9 +44,11 @@ function sliderInit() {
       '80%': [4000000, 4000000],
       max: [5000000, 5000000],
     },
+    padding: 0,
     pips: {
       mode: 'steps',
       density: 20,
+
       format: wNumb({
         thousand: ' ',
         postfix: ' ₽',

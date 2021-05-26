@@ -27,7 +27,6 @@
     background-color: @main-dark;
     border-radius: 100%;
     padding: 3px;
-
   }
 
   &__icon-wrap {
@@ -40,10 +39,23 @@
   }
 }
 
+@media (min-width: @tablet) {
+
+  .advantage {
+    width: auto;
+    min-height: 308px;
+
+    &__img {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
 
 @media (min-width: @desktop) {
   .advantage {
-    width: 424px;
+    max-width: 424px;
+    width: 100%;
 
     &__img {
       margin-bottom: 30px;
