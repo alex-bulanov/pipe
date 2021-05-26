@@ -76,7 +76,7 @@
     font-size: 16px;
     line-height: 24px;
     color: @text-color;
-    background-color: @main-dark !important;
+    background-color: @main-dark;
     z-index: 2;
 
     &:focus {
@@ -137,11 +137,36 @@
     line-height: 18px;
   }
 
-  &__input:focus ~ &__label {
+  &__input:not([name="message"]):focus ~ &__label {
     top: 8px;
     font-size: 14px;
     line-height: 18px;
     color: @text-color;
+  }
+
+  &__input[name="message"]:focus ~ &__label {
+    font-size: 14px;
+    line-height: 18px;
+    color: @text-color;
+  }
+
+  &__input--filled ~ &__label {
+    top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    color: @secondary-text-color;
+  }
+
+  &__input--filled[name="message"] ~ &__label {
+    font-size: 14px;
+    line-height: 18px;
+    color: @secondary-text-color;
+  }
+
+  // disabled
+
+  &__input:disabled + &__input-wrapper {
+    background: @secondary-text-color;
   }
 
   // error 

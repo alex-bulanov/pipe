@@ -85,18 +85,27 @@
       <!-- HERO -->
       <section class="hero section animate">
         <div class="container">
-          <h1
-            class="hero__title section__title section__title--main animate__animated animate__slideInLeft animate__faster">
-            Выбирайте трубы Pragma и получайте <span>приятные</span> <span>бонусы</span>
-          </h1>
-          <p class="hero__lead section__text animate__animated animate__fadeIn wow" data-wow-delay="0.5s">Мы приглашаем
-            проектировщиков к
-            выгодному сотрудничеству с нашей фирмой.
-          </p>
+          <div class="hero__content">
+            <h1
+              class="hero__title section__title section__title--main animate__animated animate__slideInLeft animate__faster">
+              Выбирайте трубы Pragma и получайте <span>приятные</span> <span>бонусы</span>
+            </h1>
+            <p class="hero__lead section__text animate__animated animate__fadeIn wow" data-wow-delay="0.5s">Мы
+              приглашаем
+              проектировщиков к
+              выгодному сотрудничеству с нашей фирмой.
+            </p>
 
-          <a class="hero__button button animate__animated animate__fadeIn wow" href="#feedback" data-wow-delay="0.5s"
-            data-goto=".feedback"><span>Сотрудничать</span></a>
+            <a class="hero__button button animate__animated animate__fadeIn wow" href="#feedback" data-wow-delay="0.5s"
+              data-goto=".feedback"><span>Сотрудничать</span></a>
+          </div>
+          <div class="hero__video-container">
+            <video class="hero__video" autoplay muted loop>
+              <source src="video/promo.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
+
       </section>
       <!-- END HERO -->
 
@@ -166,31 +175,30 @@
       <section class="pragma section">
         <div class="container">
           <div class="pragma__wrapper">
-            <div class="pragma__text-content">
-              <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
-                лучшее решение для <br> проектирования вашей задумки</h2>
 
-              <p class="pragma__desc section__text">Наша труба используется в самых крупных и значимых объектах России.
-                Это стадионы,
-                построенные к чемпионату мира по
-                футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных
-                комплексов
-                спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
-            </div>
+            <h2 class="pragma__title section__title"><span>Труба PRAGMA -</span><br>
+              лучшее решение для <br> проектирования вашей задумки</h2>
+
+            <p class="pragma__desc section__text">Наша труба используется в самых крупных и значимых объектах России.
+              Это стадионы,
+              построенные к чемпионату мира по
+              футболу, это космодром «Восточный», это АЭС. Также тысячи дорог, школ, садов, больниц, жилищных
+              комплексов
+              спроектированы и построены с использованием ливневки, канализации, дренажа системы «Pragma».</p>
+
             <div class="pragma__image-container animate">
-              <img class="pragma__image" src="./common.blocks/pragma/text.svg" width="288" height="208" alt="">
-              <img class="pragma__image pragma__image--animate  animate__animated animate__fadeIn wow"
-                src="./common.blocks/pragma/text-color.svg" data-wow-duration="0.7s" data-wow-delay="1s" width="288"
+              <img class="pragma__image pragma__image--text" src="./common.blocks/pragma/text.svg" width="288"
+                height="208" alt="">
+              <img class="pragma__image pragma__image--animate  animate__animated animate__zoomIn wow"
+                src="./common.blocks/pragma/text-color.svg" data-wow-duration="0.6s" data-wow-delay="0.7s" width="288"
                 height="208" alt="">
               <picture>
                 <source media="(min-width: 1920px)"
                   srcset="${require('./common.blocks/pragma/tube-desktop.png')}, ${require('./common.blocks/pragma/tube-desktop@2x.png')} 2x">
-                <img class="pragma__image pragma__image--tube animate__animated animate__zoomIn wow" width="185"
-                  height="150" src="./common.blocks/pragma/tube.png"
-                  srcset="${require('./common.blocks/pragma/tube.png')} 2x" alt="Труба Прагма" data-wow-duration="0.5s"
-                  data-wow-delay="0.1s">
+                <img class="pragma__image pragma__image--tube" width="185" height="150"
+                  src="./common.blocks/pragma/tube.png" srcset="${require('./common.blocks/pragma/tube.png')} 2x"
+                  alt="Труба Прагма">
               </picture>
-
             </div>
           </div>
         </div>
@@ -198,13 +206,14 @@
       <!-- END PRAGMA -->
 
       <!-- ADVANTAGES  -->
-      <section class="advantages section" data-section="advantages" id="advantages">
+      <section class="advantages section animate" data-section="advantages" id="advantages">
         <div class="container">
           <h2 class="advantages__title section__title">Преимущества трубы</h2>
 
-          <ul class="advantages__list list-reset">
-            <li class="advantages__advantage advantage">
-              <div class="advantage__img">
+          <ul class="advantages__list list-reset animate">
+            <li class="advantages__advantage advantage animate__animated animate__fadeIn wow" data-wow-duration="1s"
+              data-wow-delay="0.5s">
+              <div class=" advantage__img">
                 <div class="advantage__circle">
                   <div class="advantage__circle-bg">
                     <div class="advantage__circle">
@@ -222,7 +231,8 @@
               <h3 class="advantage__title section__sub-title">Максимальная герметичность благодаря технологии раструба
               </h3>
             </li>
-            <li class="advantages__advantage advantage">
+            <li class="advantages__advantage advantage animate__animated animate__fadeIn wow" data-wow-duration="1s"
+              data-wow-delay="1s">
               <div class="advantage__img">
                 <div class="advantage__circle">
                   <div class="advantage__circle-bg">
@@ -241,7 +251,8 @@
               <h3 class="advantage__title section__sub-title">PipeLife - один из мировых лидеров в производстве
                 полипропиленовых труб</h3>
             </li>
-            <li class="advantages__advantage advantage">
+            <li class="advantages__advantage advantage animate__animated animate__fadeIn wow" data-wow-duration="1s"
+              data-wow-delay="1.5s">
               <div class="advantage__img">
                 <div class="advantage__circle">
                   <div class="advantage__circle-bg">
@@ -270,7 +281,7 @@
       <!-- END ADVANTAGES  -->
 
       <!-- FEEDBACK -->
-      <section class="feedback section" data-section="feedback" id="feedback">
+      <section class="feedback section animate" data-section="feedback" id="feedback">
         <div class="container">
           <h2 class="feedback__title section__title">Сотрудничать с&nbsp;нами</h2>
 
@@ -278,7 +289,8 @@
             положительные эмоции
             у наших партнеров!</p>
 
-          <form class="feedback__form form" action="#" method="POST" id="feedback-form">
+          <form class="feedback__form form animate__animated animate__fadeInUp wow" action="#" method="POST"
+            id="feedback-form">
             <div class="form__wrapper">
               <div class="form__left-block">
                 <div class="form__input-container">
